@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import MovieCard from '../MovieCard';
+import { MemoryRouter } from 'react-router-dom';
 
 describe('MovieCard Component', () => {
     const mockMovie = {
@@ -12,7 +13,11 @@ describe('MovieCard Component', () => {
     };
 
     it('renders movie card correctly', () => {
-        render(<MovieCard movie={mockMovie} />);
+        render(
+            <MemoryRouter>
+                <MovieCard movie={mockMovie} />
+            </MemoryRouter>
+        );
 
         expect(screen.getByText('Test Movie')).toBeInTheDocument();
         expect(screen.getByAltText('Test Movie')).toBeInTheDocument();
