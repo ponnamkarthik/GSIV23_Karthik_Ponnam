@@ -7,11 +7,7 @@ import MovieCard from '../components/MovieCard';
 const ListPage: React.FC = () => {
     const dispatch = useDispatch();
     const { movies, loading, error } = useSelector((state: RootState) => state.movies);
-    // const { loading } = useSelector((state: RootState) => state.loading);
-    // const { error } = useSelector((state: RootState) => state.error);
-    // const loading = false;
-    // const error = null;
-    //
+
     useEffect(() => {
         // @ts-ignore
         dispatch(fetchMovies());
@@ -27,7 +23,7 @@ const ListPage: React.FC = () => {
 
 
     return (
-        <div>
+        <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-6 mx-8 my-8">
             {movies.map(movie => (
                 <MovieCard key={movie.id} movie={movie} />
             ))}
