@@ -1,10 +1,12 @@
 import {Action, configureStore, ThunkAction} from '@reduxjs/toolkit';
 import movieReducer from './movieSlice';
+import movieDetailsReducer from './movieDetailsSlice';
 import { useDispatch } from 'react-redux';
 
 const store = configureStore({
     reducer: {
         movies: movieReducer,
+        movieDetails: movieDetailsReducer,
     },
 });
 

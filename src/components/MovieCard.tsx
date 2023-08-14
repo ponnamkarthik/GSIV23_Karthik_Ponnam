@@ -23,7 +23,7 @@ const MovieCard: React.FC<MovieCardProps> = ({movie}) => {
             <div className="h-24 px-4 space-y-2 text-start">
                 <div className="flex flex-row justify-between">
                     <h3 className="line-clamp-1 flex-1 color-gray">{movie.title}</h3>
-                    <p className="color-light-gray">Rating: {movie.vote_average}</p>
+                    <p className="color-light-gray">Rating: {movie.vote_average.toFixed(1)}</p>
                 </div>
                 <p className="line-clamp-2 color-gray">{movie.overview}</p>
             </div>
